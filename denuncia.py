@@ -24,8 +24,8 @@ SHEET_USUARIOS = "usuarios"
 # Listas atualizadas com novas opções de status
 OPCOES_STATUS = ['Pendente', 'Em Andamento', 'Em Monitoramento', 'Revisoria', 'Concluída', 'Arquivada']
 OPCOES_ORIGEM = ['Pessoalmente', 'Telefone', 'Whatsapp', 'Ministério Publico', 'Administração', 'Ouvidoria', 'Disk Denuncia']
-OPCOES_TIPO = ['Urbana', 'Ambiental', 'Urbana e Ambiental']
-OPCOES_ZONA = ['TODAS', 'NORTE', 'SUL', 'LESTE', 'OESTE', 'CENTRO']
+OPCOES_TIPO = ['Urbana', 'Ambiental', 'Urbana e Ambiental', 'Ação Noturna']
+OPCOES_ZONA = ['TODAS', 'NORTE', 'SUL', 'LESTE', 'OESTE', 'CENTRO','ZONA RURAL', 'DISTRITO INDUSTRIAL', '1° DISTRITO' 2° DISTRITO']
 OPCOES_FISCAIS_SELECT = ['Edvaldo Wilson Bezerra da Silva - 000.323', 'PATRICIA MIRELLY BEZERRA CAMPOS - 000.332', 'Raiany Nayara de Lima - 000.362', 'Suellen Bezerra do Nascimeto - 000.417']
 
 # ============================================================
@@ -259,3 +259,4 @@ elif page == "Reincidências":
                     df_den.at[idx, 'status'] = 'Pendente'
                     df_den.at[idx, 'descricao'] += f"\n\n[REINCIDÊNCIA {datetime.now().strftime('%d/%m/%Y')}]: {nova_desc}"
                     update_full_sheet(SHEET_DENUNCIAS, df_den); st.success("Caso reaberto!"); time.sleep(1); st.rerun()
+
